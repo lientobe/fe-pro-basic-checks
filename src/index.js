@@ -14,8 +14,12 @@ export function fenceString(string) {
     let currentStr = string.split('');
     let newStr = [];
     for (let i = 0; i < currentStr.length; i++) {
-      newStr [i] = (i % 2) ? currentStr[i].toUpperCase () : currentStr[i].toLowerCase();
+      if (i % 2) {
+        newStr.push(currentStr[i].toUpperCase());
+      } else {
+        newStr.push(currentStr[i].toLowerCase());
       }
+    }
     return newStr.join ('');
 };
 
